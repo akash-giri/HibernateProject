@@ -71,5 +71,8 @@ load()
 @OneToOneMapping
 ----------------------
 
-@OneToManyMapping
+@OneToManyMapping and @ManyToOneMapping
+----------------------
+
+@ManyToManyMapping
 ----------------------
