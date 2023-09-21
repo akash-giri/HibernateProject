@@ -37,12 +37,17 @@ public class MapDemo {
         session1.save(q1);
         session1.save(answer);
         session1.save(answer1);
-        beginTransaction.commit();
+
 
         Question question = (Question) session1.get(Question.class, 1212);
+        System.out.println(question.getQuestionId());
         System.out.println(question.getQuestion());
+        //Lazy loading by default
+        System.out.println(question.getAnswers().size());
+
 //        System.out.println(question.getAnswer().getAnswer());
 
+        beginTransaction.commit();
         session1.close();
         factory.close();
     }

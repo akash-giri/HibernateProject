@@ -76,3 +76,8 @@ load()
 
 @ManyToManyMapping
 ----------------------
+
+FETCH TYPE
+------------------------
+1. LAZY  ->In lazy loading, associated data loads only when we explicitly call getter or size method.
+2. EAGER ->It is a design pattern in which data loading occurs on the spot.

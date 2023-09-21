@@ -13,7 +13,7 @@ public class Question {
 //    @OneToOne
 //    @JoinColumn(name = "ans_id")  // use to change the mapping column name
 //    private Answer answer;
-    @OneToMany(mappedBy = "question")
+    @OneToMany(mappedBy = "question",fetch = FetchType.EAGER)  // by default lazy loading set , we explicitly set Eager
     private List<Answer> answers;
 
 //    public Question(int questionId, String question, Answer answer) {
