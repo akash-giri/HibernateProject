@@ -103,3 +103,23 @@ object {n-46,x-47}  once we set the object value by using setter and constructor
 
         when we are in presistent state and call the delete then value deleted from the database but we have that object with session object
         that stage is called removed state
+
+HQL(Hibernate Query Language)
+---------
+How to get the data in hibernate?
+1. get()   2.load()
+
+how to load complex data??
+--------------------------
+By ->HQL which is also support SQL but we don't use SQL
+
+HQL -Database independent
+    -Easy to learn for programmer
+    -from Student (Entity name)
+
+SQL -Database dependent
+    -Easy to learn for DBA
+    -Select * from Student (Table Name)
+
+-->Some More HQL Complex Queries | Delete|Update|Joins
+-->implementation Pagination using HQL Queries
