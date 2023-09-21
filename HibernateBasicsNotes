@@ -70,3 +70,6 @@ load()
 
 @OneToOneMapping
 ----------------------
+
+@OneToManyMapping
+----------------------

@@ -2,20 +2,38 @@ package org.map;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 public class Question {
     @Id
     @Column(name = "question_id")
     private int questionId;
     private String question;
-    @OneToOne
-    @JoinColumn(name = "ans_id")  // use to change the mapping column name
-    private Answer answer;
+//    @OneToOne
+//    @JoinColumn(name = "ans_id")  // use to change the mapping column name
+//    private Answer answer;
+    @OneToMany(mappedBy = "question")
+    private List<Answer> answers;
 
-    public Question(int questionId, String question, Answer answer) {
+//    public Question(int questionId, String question, Answer answer) {
+//        this.questionId = questionId;
+//        this.question = question;
+//        this.answer = answer;
+//    }
+
+    public Question(int questionId, String question, List<Answer> answers) {
         this.questionId = questionId;
         this.question = question;
-        this.answer = answer;
+        this.answers = answers;
+    }
+
+    public List<Answer> getAnswers() {
+        return answers;
+    }
+
+    public void setAnswers(List<Answer> answers) {
+        this.answers = answers;
     }
 
     public Question() {
@@ -37,11 +55,5 @@ public class Question {
         this.question = question;
     }
 
-    public Answer getAnswer() {
-        return answer;
-    }
 
-    public void setAnswer(Answer answer) {
-        this.answer = answer;
-    }
 }
