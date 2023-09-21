@@ -54,6 +54,7 @@ public class App
         currentSession.save(address);
         beginTransaction.commit();
         currentSession.close();
+        factory.close();
         System.out.println("Done");
     }
 }

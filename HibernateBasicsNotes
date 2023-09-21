@@ -1,0 +1,65 @@
+Hibernate Tutorial
+------------------------
+
+Prerequisite
+        1.java Core-->basic concepts are very Important
+        2.JDBC     -->Basic JDBC API
+        3.Database -->Basic Of Database tables , Keys and queries
+
+
+Q.What is hibernate? ORM(Object relational Mapping)
+Ans. Hibernate is a java framework that simplies he development of java    applicaion to interact with the database.
+
+  ->Hibernate is ORM(Object Relational Mapping) tool
+  ->Hibernate is an Open source, lightweight.
+  ->Hibernate is a non -invasive framework , means it won't forces the programmers to extend/implement any class/interface
+  ->it is invented by Gavin King in 2001.
+  ->Any type of application can build with Hibernate Framework.
+
+
+Traditional way to Save Data(JDBC)
+----------------------------------
+
+we write code manually to store objects(data) t database using JDBC
+DAO(data access Object)
+
+where hibernate play its role
+-----------------------------
+Now it is done automatically by hibernate
+
+we can map by using xml/annotation any one.
+
+
+Hibernate configuration in xml
+---------------------------------
+
+Basics commonly used hibernate annotation
+-----------------------------------------
+@Entity -> use to mark any class as entity (means same treated as table in database or created table with same class name automatically in database)
+@Table  -> use to change the table details
+@Id     -> use to mark column as id(primary key)
+@GeneratedValue ->hinernate will automatically generate values for that using an internal sequence therefore we don't have to set it manually.
+@Column ->Can be used to specify column mappings. For example, to change the column name in the associated table in database.
+@Transient -> this tells hibernate not to save this field.
+@Temporal -over a date field tells hibernate the format in which the date needs to be saved.
+@Lob ->tells hibernate that this is a large object, not a simple object
+@OneToOne , @OneToMany, @ManyToOne , @JoinColumn etc
+
+
+FETCH DATA
+-----------------------------------------------
+we can use two method of session get() and load()
+get()
+------------------------------
+1. get method of hibernate session returns null if object is not found in cache as well as on database.
+2. get() involve database hit if object doesn't exists in Session Cache and returns a fully initialized object which
+   may involve several database call
+3. Use if you are not sure that object exists in db or not
+
+load()
+------------------------------
+1.load() method throws
+  ObjectNotFoundException if object is not found on cache as well as on database but never return null.
+2. load method can return proxy in place and only initialize the object or hit the database if any method other
+   than getId() is called on persistent or entity object .This lazy initialization increases the performance.
+3. Use if you are sure that object exists.
