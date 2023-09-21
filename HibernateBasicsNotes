@@ -63,3 +63,7 @@ load()
 2. load method can return proxy in place and only initialize the object or hit the database if any method other
    than getId() is called on persistent or entity object .This lazy initialization increases the performance.
 3. Use if you are sure that object exists.
+
+
+@EmbeddableAnnotation
+------------------------
