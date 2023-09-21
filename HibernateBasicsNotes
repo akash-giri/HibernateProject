@@ -67,3 +67,6 @@ load()
 
 @EmbeddableAnnotation
 ------------------------
+
+@OneToOneMapping
+----------------------

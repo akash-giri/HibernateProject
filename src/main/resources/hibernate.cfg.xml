@@ -12,5 +12,7 @@
         <property name="show_sql">true</property>
         <mapping class="org.example.Student"/>
         <mapping class="org.example.Address"/>
+        <mapping class="org.map.Question"/>
+        <mapping class="org.map.Answer"/>
     </session-factory>
 </hibernate-configuration>
