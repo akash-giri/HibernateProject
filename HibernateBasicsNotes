@@ -81,3 +81,25 @@ FETCH TYPE
 ------------------------
 1. LAZY  ->In lazy loading, associated data loads only when we explicitly call getter or size method.
 2. EAGER ->It is a design pattern in which data loading occurs on the spot.
+
+Hibernate/Persistence lifecycle states
+-----------------------------------------------------
+1. Transient state
+2. Persistent state
+3. Detached state
+4. Removed state
+
+-database
+-Session Object  ->it provides the methods through which we can store the value in database
+
+object {n-46,x-47}  once we set the object value by using setter and constructor it will go inside transient state
+        it is not in the database or not in the session object
+
+        to save the value we have to call session.save(object)  then it will forward into the persistent state and
+        store in database and associated with session object as well
+
+        when we close/clear the session then object is removed from the session object then it will go to detached
+        state
+
+        when we are in presistent state and call the delete then value deleted from the database but we have that object with session object
+        that stage is called removed state
