@@ -124,3 +124,15 @@ SQL -Database dependent
 -->Some More HQL Complex Queries | Delete|Update|Joins
 -->implementation Pagination using HQL Queries
 
+
+Hibernate Caching
+-------------------
+1.Caching is a mechanism to enhance the performance of a application
+2.cache is use to reduce the number of database queries.
+
+UseCase
+----------
+
+Two types of caching in hibernate
+1.First Level  -Session Object, by default provided
+2.Second Level -SessionFactory ,Manually Enable
